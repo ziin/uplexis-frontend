@@ -1,5 +1,6 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { App, apps } from '../data/apps'
 import { Category, categories } from '../data/categories'
 
@@ -32,9 +33,11 @@ const Home = ({
           <ul>
             {apps.map(({ id, title, price, release }) => (
               <li key={id}>
-                <pre>
-                  {title}, {price}, {release}
-                </pre>
+                <Link href={`/${id}`} passHref={true}>
+                  <pre>
+                    {title}, {price}, {release}
+                  </pre>
+                </Link>
               </li>
             ))}
           </ul>
