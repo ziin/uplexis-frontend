@@ -1,9 +1,9 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 import { useState } from 'react'
 import CategoryBar from '../components/CategoryBar'
 import SortBySelect from '../components/SortBySelect'
+import AppList from '../components/AppList'
 
 import { App, apps } from '../data/apps'
 import { Category, categories } from '../data/categories'
@@ -33,22 +33,7 @@ const Home = ({
 
         <SortBySelect selected={sortBy} onSelect={setSortBy} />
 
-        {/* Apps */}
-        <section>
-          <ul>
-            {filterApps(apps, category, sortBy).map(
-              ({ id, title, price, release }) => (
-                <li key={id}>
-                  <Link href={`/${id}`} passHref={true}>
-                    <pre>
-                      {title}, {price}, {release}
-                    </pre>
-                  </Link>
-                </li>
-              )
-            )}
-          </ul>
-        </section>
+        <AppList apps={filterApps(apps, category, sortBy)} />
       </main>
     </div>
   )
