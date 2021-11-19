@@ -1,12 +1,3 @@
 {
-  "extends": "next/core-web-vitals",
-  "rules": {
-    "no-console": "warn",
-    "no-debugger": "warn",
-    "no-unused-vars": "warn",
-    "no-undef": "warn",
-    "no-unused-expressions": "warn",
-    "indent": ["warn", 2],
-    "no-trailing-spaces": "warn"
-  }
+  "extends": "next/core-web-vitals"
 }
