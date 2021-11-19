@@ -2,6 +2,7 @@ import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
+import CategoryBar from '../components/CategoryBar'
 
 import { App, apps } from '../data/apps'
 import { Category, categories } from '../data/categories'
@@ -23,19 +24,11 @@ const Home = ({
       </Head>
 
       <main>
-        {/* Categories */}
-        <nav>
-          <ul>
-            <li key="all" onClick={() => setCategory(null)}>
-              <span>Todos</span>
-            </li>
-            {categories.map((category) => (
-              <li key={category.id} onClick={() => setCategory(category)}>
-                <span>{category.name}</span>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <CategoryBar
+          categories={categories}
+          selected={category}
+          onSelect={setCategory}
+        />
 
         <label htmlFor="sortby">Ordenar</label>
         <select
