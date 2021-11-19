@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 import CategoryBar from '../components/CategoryBar'
+import SortBySelect from '../components/SortBySelect'
 
 import { App, apps } from '../data/apps'
 import { Category, categories } from '../data/categories'
@@ -30,15 +31,7 @@ const Home = ({
           onSelect={setCategory}
         />
 
-        <label htmlFor="sortby">Ordenar</label>
-        <select
-          id="sortby"
-          value={sortBy}
-          onChange={(e) => setSortBy(Number(e.target.value) as Sort)}
-        >
-          <option value={Sort.price}>Preço</option>
-          <option value={Sort.release}>Lançamento</option>
-        </select>
+        <SortBySelect selected={sortBy} onSelect={setSortBy} />
 
         {/* Apps */}
         <section>
