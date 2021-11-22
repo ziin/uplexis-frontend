@@ -10,6 +10,7 @@ import { Category, categories } from '../data/categories'
 import { Sort, filterApps } from '../utils/filters'
 import { styled } from '../stitches.config'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import Slider from '../components/Slider'
 
 const Home = ({
   apps,
@@ -25,6 +26,10 @@ const Home = ({
         <meta name="description" content="upMiner" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <header>
+        <Slider interval={8000} />
+      </header>
 
       <Main>
         <CategoryBar
