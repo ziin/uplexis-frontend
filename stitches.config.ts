@@ -27,7 +27,7 @@ const space = {
   112: pixelToRem(112),
 }
 
-export const { styled, globalCss, createTheme } = createStitches({
+export const { styled, globalCss, createTheme, getCssText } = createStitches({
   prefix: 'default',
   theme: {
     colors: {
