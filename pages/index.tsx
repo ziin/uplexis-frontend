@@ -11,6 +11,7 @@ import { Sort, filterApps } from '../utils/filters'
 import { styled } from '../stitches.config'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import Slider from '../components/Slider'
+import PageLayout from '../components/PageLayout'
 
 const Home = ({
   apps,
@@ -20,7 +21,7 @@ const Home = ({
   const [sortBy, setSortBy] = useState<Sort>(Sort.release)
 
   return (
-    <Page>
+    <PageLayout>
       <Head>
         <title>upMiner</title>
         <meta name="description" content="upMiner" />
@@ -47,14 +48,9 @@ const Home = ({
           }))}
         />
       </Main>
-    </Page>
+    </PageLayout>
   )
 }
-
-const Page = styled('div', {
-  maxWidth: '1200px',
-  mx: 'auto',
-})
 
 const Main = styled('main', {
   mx: '$12',
