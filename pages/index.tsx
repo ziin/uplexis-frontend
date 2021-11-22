@@ -1,5 +1,4 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
-import Head from 'next/head'
 import { useState } from 'react'
 import CategoryBar from '../components/CategoryBar'
 import SortBySelect from '../components/SortBySelect'
@@ -10,7 +9,6 @@ import { Category, categories } from '../data/categories'
 import { Sort, filterApps } from '../utils/filters'
 import { styled } from '../stitches.config'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import Slider from '../components/Slider'
 import PageLayout from '../components/PageLayout'
 
 const Home = ({
@@ -21,17 +19,7 @@ const Home = ({
   const [sortBy, setSortBy] = useState<Sort>(Sort.release)
 
   return (
-    <PageLayout>
-      <Head>
-        <title>upMiner</title>
-        <meta name="description" content="upMiner" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <header>
-        <Slider interval={8000} />
-      </header>
-
+    <PageLayout title="upMiner" description="upMiner">
       <Main>
         <CategoryBar
           categories={categories}

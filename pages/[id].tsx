@@ -1,10 +1,8 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { App, apps } from '../data/apps'
 import { ParsedUrlQuery } from 'querystring'
 import PageLayout from '../components/PageLayout'
-import Slider from '../components/Slider'
 import { styled } from '../stitches.config'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from '../components/Button'
@@ -13,17 +11,7 @@ export const Application = ({
   app: { title, description },
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <PageLayout>
-      <Head>
-        <title>upMiner: {title}</title>
-        <meta name="description" content={`upMiner: ${title}`} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <header>
-        <Slider />
-      </header>
-
+    <PageLayout title={`upMiner: ${title}`} description={`upMiner: ${title}`}>
       <Main>
         <Link href="/" passHref>
           <Nav>
