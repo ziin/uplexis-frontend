@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import { globalStyles } from '../stitches.config'
-import { library } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import { library, config } from '@fortawesome/fontawesome-svg-core'
 import {
   faBan,
   faBriefcase,
@@ -30,6 +31,9 @@ library.add(
   faGlobe,
   faChevronLeft
 )
+
+// Prevent fontawesome from adding its CSS since we did it manually above:
+config.autoAddCss = false
 
 function MyApp({ Component, pageProps }: AppProps) {
   globalStyles()

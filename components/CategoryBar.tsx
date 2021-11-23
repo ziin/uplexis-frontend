@@ -111,7 +111,7 @@ const Item = styled('div', {
 })
 
 const Icon = styled(FontAwesomeIcon, {
-  fontSize: '$16',
+  fontSize: '$16 !important',
 })
 
 type Props = {

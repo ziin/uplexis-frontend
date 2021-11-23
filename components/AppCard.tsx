@@ -46,7 +46,7 @@ const Content = styled('div', {
 })
 
 const Icon = styled(FontAwesomeIcon, {
-  fontSize: '$28',
+  fontSize: '$28 !important',
   color: '$orange',
   marginBottom: '$18',
 })
